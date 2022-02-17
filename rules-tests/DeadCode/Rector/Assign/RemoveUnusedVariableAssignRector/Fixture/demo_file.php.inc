@@ -1,0 +1,25 @@
+<?php
+
+namespace Rector\Tests\DeadCode\Rector\Assign\RemoveUnusedVariableAssignRector\Fixture;
+
+final class DemoFile
+{ 
+    public function validate() {
+       throw new Exception();
+    }
+    
+    public function test($params)
+    {
+        $tmp = isset($params['test']) ? $this->validate($params['test']) : null;
+    }
+}
+?>
+-----
+<?php
+
+namespace Rector\Tests\DeadCode\Rector\Assign\RemoveUnusedVariableAssignRector\Fixture;
+
+// what is expected code?
+// should remain the same? delete part bellow ----- (included)
+
+?>
